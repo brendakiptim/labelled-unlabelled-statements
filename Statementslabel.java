@@ -10,12 +10,8 @@ package statementslabel;
  */
 public class Statementslabel {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-
-//        unlabelled break statement
+        //unlabelled break statement
         for (int x = 0; x < 10; x++) {
             System.out.println(x);
             if (x == 7) {
@@ -24,18 +20,20 @@ public class Statementslabel {
             }
         }
 
-        //labelled 
+        //labelled break statement
+        outerbreak:
         for (int x = 0; x < 10; x++) {
             System.out.println(x);
-            for (int z = 2; z < 5; z++) {
 
-                if (x == 3) {
+            for (int z = 0; z < 5; z++) {
+                System.out.println(z + "inner loop");
+                if (z == 3) {
                     System.out.println("Found 3");
-                    break;
+                    break outerbreak;
                 }
             }
-        }
 
+        }
     }
 
 }
